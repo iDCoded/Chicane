@@ -6,13 +6,13 @@ import { useRouter } from "next/router";
 
 export default function BackButton() {
 	const router = useRouter();
-	const routeToHome = () => {
+	const goBack = () => {
 		router.back();
 	};
 	return (
 		<>
 			<div>
-				<Button onClick={routeToHome} className="mt-4 ml-4">
+				<Button onClick={goBack} className="mt-4 ml-4">
 					<ArrowBigLeft /> Back
 				</Button>
 			</div>
