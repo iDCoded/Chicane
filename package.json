@@ -12,7 +12,9 @@
     "dev": "concurrently -n \"NEXT,ELECTRON\" -c \"blue,magenta\" --kill-others \"next dev\" \"electron .\"",
     "build": "next build && electron-builder",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "next-dev": "next dev",
+    "electron-dev": "electron ."
   },
   "dependencies": {
     "electron-serve": "^2.1.0",
