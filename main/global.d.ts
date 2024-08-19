@@ -17,4 +17,14 @@ declare global {
 			send: (channel: string, args: any) => void;
 		};
 	}
+	interface DriverCardProps {
+		rank?: number;
+		points?: number;
+		name: string;
+		team?: string;
+		country?: string;
+		countryFlag?: string;
+		driverImage?: string;
+		driverNumber?: number;
+	}
 }
