@@ -30,7 +30,3 @@ app.on("window-all-closed", () => {
 		app.quit();
 	}
 });
-
-ipcMain.on("example-channel", (event, args) => {
-	console.log(args);
-});

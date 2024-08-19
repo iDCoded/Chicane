@@ -1,6 +1,22 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
+import { Raleway } from "next/font/google";
+import Head from "next/head";
+
+const raleway = Raleway({
+	subsets: ["latin"],
+	weight: "600",
+});
 
 export default function App({ Component, pageProps }: AppProps) {
-	return <Component {...pageProps} />;
+	return (
+		<>
+			<Head>
+				<title>APP_NAME</title>
+			</Head>
+			<main className={raleway.className}>
+				<Component {...pageProps} />
+			</main>
+		</>
+	);
 }
