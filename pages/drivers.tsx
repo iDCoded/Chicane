@@ -61,7 +61,7 @@ export default function Drivers() {
 				{loading ? (
 					<>
 						{Array.from({ length: 20 }).map((_, index) => (
-							<Skeleton key={index} className="min-w-[240px] min-h-[260px]" />
+							<Skeleton key={index} className="min-w-[214px] min-h-[180px]" />
 						))}
 					</>
 				) : (
