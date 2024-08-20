@@ -51,7 +51,7 @@ export default function DriverCard(props: DriverCardProps) {
 						/>
 						<CardTitle>{props.name}</CardTitle>
 					</CardHeader>
-					<div className="overflow-hidden px-4">
+					<div className="px-5">
 						<Separator />
 					</div>
 
@@ -70,7 +70,7 @@ export default function DriverCard(props: DriverCardProps) {
 							<Image
 								className="absolute top-6 left-4"
 								src={formatDriverNumberURL(props.name.toString())}
-								alt={""}
+								alt={props.driverNumber.toString()}
 								width={80}
 								height={80}
 							/>

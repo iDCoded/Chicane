@@ -39,7 +39,7 @@ declare global {
 		country?: string;
 		countryFlag?: string;
 		driverImage?: string;
-		driverNumber?: number;
+		driverNumber: number;
 		teamColor?: string;
 	}
 }

@@ -54,6 +54,7 @@ export default function Drivers() {
 						<DriverCard
 							key={driver.driver_number}
 							name={driverFullName(driver.driver_number)}
+							driverNumber={driver.driver_number}
 							team={driver.team_name}
 							teamColor={driver.team_colour}
 						/>
