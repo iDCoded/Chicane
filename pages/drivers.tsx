@@ -19,6 +19,7 @@ export default function Drivers() {
 	};
 
 	const [drivers, setDrivers] = useState<Driver[]>([]);
+	const [loading, setLoading] = useState<boolean>(true);
 
 	useEffect(() => {
 		const fetchDrivers = async () => {
@@ -31,7 +32,8 @@ export default function Drivers() {
 			} catch (error) {
 				console.error("Failed to fetch drivers:", error);
 			} finally {
-				console.table(drivers);
+				// console.table(drivers);
+				setLoading(false);
 			}
 		};
 
@@ -47,7 +49,12 @@ export default function Drivers() {
 		const fullName = `${firstName} ${lastName}`;
 		return fullName;
 	};
-
+	if (loading)
+		return (
+			<>
+				<p className="loading-text">Loading...</p>
+			</>
+		);
 	return (
 		<>
 			<BackButton />
