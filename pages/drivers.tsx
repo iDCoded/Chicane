@@ -9,10 +9,10 @@ export default function Drivers() {
 				<h1 className="text-4xl mt-6">Drivers</h1>
 			</div>
 			<div className="flex flex-row gap-12 mt-4 p-8">
-				<DriverCard name="Leclerc" rank={3} />
-				<DriverCard name="Sainz" />
-				<DriverCard name="Albon" />
-				<DriverCard name="Perez" />
+				<DriverCard name="Charles Leclerc" rank={3} />
+				<DriverCard name="Carlos Sainz" />
+				<DriverCard name="Alexander Albon" />
+				<DriverCard name="Sergio Perez" />
 			</div>
 		</>
 	);
