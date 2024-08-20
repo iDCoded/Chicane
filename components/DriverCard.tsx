@@ -42,8 +42,8 @@ export default function DriverCard(props: DriverCardProps) {
 	};
 	return (
 		<>
-			<div className="driver-name min-w-[214px]">
-				<Card className="min-h-[180px]">
+			<div className="driver-name min-w-[264px] overflow-hidden">
+				<Card className="min-h-[200px]">
 					<CardHeader className="flex flex-row">
 						<div
 							className="w-1 h-8 mr-2"
@@ -57,7 +57,7 @@ export default function DriverCard(props: DriverCardProps) {
 
 					<CardContent className="relative my-4">
 						<CardDescription>{props.team}</CardDescription>
-						<div className="absolute top-0 right-2">
+						<div className="absolute top-0 right-2 ">
 							<Image
 								src={formatDriverURL(props.name.toString())}
 								alt={props.name}
