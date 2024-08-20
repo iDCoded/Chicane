@@ -60,10 +60,9 @@ export default function Drivers() {
 			<div className="grid grid-cols-4 gap-12 mt-4 p-8">
 				{loading ? (
 					<>
-						<Skeleton className="min-w-[240px] min-h-[260px]" />
-						<Skeleton className="min-w-[240px] min-h-[260px]" />
-						<Skeleton className="min-w-[240px] min-h-[260px]" />
-						<Skeleton className="min-w-[240px] min-h-[260px]" />
+						{Array.from({ length: 20 }).map((_, index) => (
+							<Skeleton key={index} className="min-w-[240px] min-h-[260px]" />
+						))}
 					</>
 				) : (
 					drivers.map((driver) => (
