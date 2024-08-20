@@ -5,7 +5,6 @@ import Head from "next/head";
 
 const raleway = Raleway({
 	subsets: ["latin"],
-	weight: "600",
 });
 
 export default function App({ Component, pageProps }: AppProps) {

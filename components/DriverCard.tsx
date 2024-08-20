@@ -40,16 +40,34 @@ export default function DriverCard(props: DriverCardProps) {
 		const URL = `${baseURL}${initials.toUpperCase()}.png`;
 		return URL;
 	};
+
+	const parseFirstName = (driverName: string) => {
+		const name = driverName.split(" ");
+		const firstName = name[0];
+		return firstName;
+	};
+	const parseLastName = (driverName: string) => {
+		const name = driverName.split(" ");
+		const lastName = name[1];
+		return lastName;
+	};
 	return (
 		<>
 			<div className="driver-name min-w-[264px] overflow-hidden">
 				<Card className="min-h-[200px]">
 					<CardHeader className="flex flex-row">
 						<div
-							className="w-1 h-8 mr-2"
+							className="w-1 h-14 mr-2"
 							style={{ backgroundColor: `#${props.teamColor}` }}
 						/>
-						<CardTitle>{props.name}</CardTitle>
+						<div className="flex flex-col">
+							<CardTitle className="font-light text-lg">
+								{parseFirstName(props.name)}
+							</CardTitle>
+							<CardTitle className="font-semibold">
+								{parseLastName(props.name)}
+							</CardTitle>
+						</div>
 					</CardHeader>
 					<div className="px-5">
 						<Separator />
@@ -68,7 +86,7 @@ export default function DriverCard(props: DriverCardProps) {
 						</div>
 						<div className="number">
 							<Image
-								className="absolute top-6 left-4"
+								className="absolute top-6 left-4 drop-shadow-lg"
 								src={formatDriverNumberURL(props.name.toString())}
 								alt={props.driverNumber.toString()}
 								width={80}
