@@ -4,21 +4,6 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { useEffect, useState } from "react";
 
 export default function Drivers() {
-	type Driver = {
-		session_key: number;
-		meeting_key: number;
-		broadcast_name: string;
-		country_code: string;
-		first_name: string;
-		full_name: string;
-		headshot_url: string;
-		last_name: string;
-		driver_number: number;
-		team_colour: string;
-		team_name: string;
-		name_acronym: string;
-	};
-
 	const [drivers, setDrivers] = useState<Driver[]>([]);
 	const [loading, setLoading] = useState<boolean>(true);
 
@@ -69,6 +54,7 @@ export default function Drivers() {
 						<DriverCard
 							key={driver.driver_number}
 							name={driverFullName(driver.driver_number)}
+							team={driver.team_name}
 						/>
 					))
 				)}
