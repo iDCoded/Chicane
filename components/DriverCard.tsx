@@ -6,6 +6,7 @@ import {
 	CardHeader,
 	CardTitle,
 } from "./ui/card";
+import { Separator } from "./ui/separator";
 
 export default function DriverCard(props: DriverCardProps) {
 	/**
@@ -32,17 +33,32 @@ export default function DriverCard(props: DriverCardProps) {
 			<div className="driver-name min-w-[214px]">
 				<Card className="min-h-[180px]">
 					<CardHeader>
-						<Image
-							src={formatDriverURL(props.name.toString())}
-							alt={props.name}
-							width={80}
-							height={80}
-							priority
-						/>
 						<CardTitle>{props.name}</CardTitle>
 					</CardHeader>
-					<CardContent>
+					<div className="overflow-hidden px-4">
+						<Separator />
+					</div>
+
+					<CardContent className="relative my-4">
 						<CardDescription>{props.name}</CardDescription>
+						<div className="absolute top-0 right-2">
+							<Image
+								src={formatDriverURL(props.name.toString())}
+								alt={props.name}
+								width={80}
+								height={80}
+								priority
+							/>
+						</div>
+						<div className="number">
+							<Image
+								className="absolute top-6 left-4"
+								src="https://media.formula1.com/d_default_fallback_image.png/content/dam/fom-website/2018-redesign-assets/drivers/number-logos/LEWHAM01.png"
+								alt={""}
+								width={80}
+								height={80}
+							/>
+						</div>
 					</CardContent>
 				</Card>
 			</div>
