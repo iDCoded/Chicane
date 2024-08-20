@@ -28,6 +28,18 @@ export default function DriverCard(props: DriverCardProps) {
 			?.toUpperCase()}/${initials.toUpperCase()}_${firstName}_${lastName}/${initials.toLowerCase()}.png`;
 		return URL;
 	};
+
+	const formatDriverNumberURL = (driverName: string) => {
+		const baseURL =
+			"https://media.formula1.com/d_default_fallback_image.png/content/dam/fom-website/2018-redesign-assets/drivers/number-logos/";
+		let name = driverName.split(" ");
+		let firstName = name[0];
+		let lastName = name[1];
+		let initials = `${firstName.slice(0, 3)}${lastName.slice(0, 3)}01`;
+
+		const URL = `${baseURL}${initials.toUpperCase()}.png`;
+		return URL;
+	};
 	return (
 		<>
 			<div className="driver-name min-w-[214px]">
@@ -53,7 +65,7 @@ export default function DriverCard(props: DriverCardProps) {
 						<div className="number">
 							<Image
 								className="absolute top-6 left-4"
-								src="https://media.formula1.com/d_default_fallback_image.png/content/dam/fom-website/2018-redesign-assets/drivers/number-logos/LEWHAM01.png"
+								src={formatDriverNumberURL(props.name.toString())}
 								alt={""}
 								width={80}
 								height={80}
