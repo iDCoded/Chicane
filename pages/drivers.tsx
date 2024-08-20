@@ -37,7 +37,16 @@ export default function Drivers() {
 
 		fetchDrivers();
 	});
-	const driverFullName = (driverNumber: number) => {};
+	const driverFullName = (driverNumber: number) => {
+		const firstName = drivers.find(
+			(f) => f.driver_number === driverNumber
+		)?.first_name;
+		const lastName = drivers.find(
+			(f) => f.driver_number === driverNumber
+		)?.last_name;
+		const fullName = `${firstName} ${lastName}`;
+		return fullName;
+	};
 
 	return (
 		<>
@@ -46,12 +55,11 @@ export default function Drivers() {
 				<h1 className="text-4xl mt-6">Drivers</h1>
 			</div>
 			<div className="grid grid-cols-4 gap-12 mt-4 p-8">
-				{/* <DriverCard name="Charles Leclerc" rank={3} />
-				<DriverCard name="Carlos Sainz" />
-				<DriverCard name="Alexander Albon" />
-				<DriverCard name="Sergio Perez" /> */}
 				{drivers.map((driver) => (
-					<DriverCard key={driver.driver_number} name={driver.full_name} />
+					<DriverCard
+						key={driver.driver_number}
+						name={driverFullName(driver.driver_number)}
+					/>
 				))}
 			</div>
 		</>
