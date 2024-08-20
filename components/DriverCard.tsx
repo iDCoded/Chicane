@@ -29,8 +29,8 @@ export default function DriverCard(props: DriverCardProps) {
 	};
 	return (
 		<>
-			<div className="driver-name">
-				<Card>
+			<div className="driver-name min-w-[240px]">
+				<Card className="min-h-[260px]">
 					<CardHeader>
 						<Image
 							src={formatDriverURL(props.name.toString())}
