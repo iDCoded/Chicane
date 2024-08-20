@@ -25,7 +25,6 @@ export default function DriverCard(props: DriverCardProps) {
 		const URL = `${baseURL}/${firstName
 			.at(0)
 			?.toUpperCase()}/${initials.toUpperCase()}_${firstName}_${lastName}/${initials.toLowerCase()}.png`;
-		console.log(URL);
 		return URL;
 	};
 	return (
