@@ -1,5 +1,6 @@
 import BackButton from "@/components/BackButton";
 import DriverCard from "@/components/DriverCard";
+import { Skeleton } from "@/components/ui/skeleton";
 import { useEffect, useState } from "react";
 
 export default function Drivers() {
@@ -49,12 +50,7 @@ export default function Drivers() {
 		const fullName = `${firstName} ${lastName}`;
 		return fullName;
 	};
-	if (loading)
-		return (
-			<>
-				<p className="loading-text">Loading...</p>
-			</>
-		);
+
 	return (
 		<>
 			<BackButton />
@@ -62,12 +58,21 @@ export default function Drivers() {
 				<h1 className="text-4xl mt-6">Drivers</h1>
 			</div>
 			<div className="grid grid-cols-4 gap-12 mt-4 p-8">
-				{drivers.map((driver) => (
-					<DriverCard
-						key={driver.driver_number}
-						name={driverFullName(driver.driver_number)}
-					/>
-				))}
+				{loading ? (
+					<>
+						<Skeleton className="min-w-[240px] min-h-[260px]" />
+						<Skeleton className="min-w-[240px] min-h-[260px]" />
+						<Skeleton className="min-w-[240px] min-h-[260px]" />
+						<Skeleton className="min-w-[240px] min-h-[260px]" />
+					</>
+				) : (
+					drivers.map((driver) => (
+						<DriverCard
+							key={driver.driver_number}
+							name={driverFullName(driver.driver_number)}
+						/>
+					))
+				)}
 			</div>
 		</>
 	);
