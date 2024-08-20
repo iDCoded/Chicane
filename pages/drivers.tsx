@@ -40,13 +40,13 @@ export default function Drivers() {
 		<>
 			<BackButton />
 			<div className="flex justify-center content-center">
-				<h1 className="text-4xl mt-6">Drivers</h1>
+				<h1 className="text-4xl mt-6 font-bold">Drivers</h1>
 			</div>
 			<div className="grid grid-cols-4 gap-12 mt-4 p-8">
 				{loading ? (
 					<>
 						{Array.from({ length: 20 }).map((_, index) => (
-							<Skeleton key={index} className="min-w-[264px] min-h-[200px]" />
+							<Skeleton key={index} className="min-w-[276px] min-h-[220px]" />
 						))}
 					</>
 				) : (
