@@ -44,7 +44,11 @@ export default function DriverCard(props: DriverCardProps) {
 		<>
 			<div className="driver-name min-w-[214px]">
 				<Card className="min-h-[180px]">
-					<CardHeader>
+					<CardHeader className="flex flex-row">
+						<div
+							className="w-1 h-8 mr-2"
+							style={{ backgroundColor: `#${props.teamColor}` }}
+						/>
 						<CardTitle>{props.name}</CardTitle>
 					</CardHeader>
 					<div className="overflow-hidden px-4">
@@ -52,7 +56,7 @@ export default function DriverCard(props: DriverCardProps) {
 					</div>
 
 					<CardContent className="relative my-4">
-						<CardDescription>{props.name}</CardDescription>
+						<CardDescription>{props.team}</CardDescription>
 						<div className="absolute top-0 right-2">
 							<Image
 								src={formatDriverURL(props.name.toString())}

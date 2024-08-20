@@ -18,7 +18,7 @@ export default function Drivers() {
 			} catch (error) {
 				console.error("Failed to fetch drivers:", error);
 			} finally {
-				// console.table(drivers);
+				console.table(drivers);
 				setLoading(false);
 			}
 		};
@@ -55,6 +55,7 @@ export default function Drivers() {
 							key={driver.driver_number}
 							name={driverFullName(driver.driver_number)}
 							team={driver.team_name}
+							teamColor={driver.team_colour}
 						/>
 					))
 				)}
