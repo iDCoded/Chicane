@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { CardTitle } from "@/components/ui/card";
+import BackButton from "@/components/BackButton";
 
 /**
  * Dynamic Driver Page
@@ -38,6 +39,8 @@ export default function DriverDetail() {
 	if (!driverData) {
 		return (
 			<>
+				<BackButton />
+
 				<div className="flex justify-center items-center h-screen">
 					<h1 className="font-bold text-lg">Fetching Driver Data...</h1>
 				</div>
@@ -47,6 +50,7 @@ export default function DriverDetail() {
 
 	return (
 		<>
+			<BackButton />
 			<div className="h-screen flex flex-row">
 				<div className="driver-image flex flex-col p-12">
 					<Image
@@ -72,7 +76,7 @@ export default function DriverDetail() {
 						height={100}
 					/>
 				</div>
-				<div className="flex flex-row pt-16 ml-6">
+				<div className="flex flex-row pt-16 ml-2">
 					<div className="flex flex-col">
 						<CardTitle className="font-light text-lg">
 							{/* {parseFirstName(props.name)} */}
