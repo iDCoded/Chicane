@@ -42,7 +42,7 @@ export default function Drivers() {
 			<div className="flex justify-center content-center">
 				<h1 className="text-4xl mt-6 font-bold">Drivers</h1>
 			</div>
-			<div className="grid grid-cols-4 gap-12 mt-4 p-8">
+			<div className="grid md:grid-cols-4 sm:grid-cols-2 gap-12 mt-4 p-8">
 				{loading ? (
 					<>
 						{Array.from({ length: 20 }).map((_, index) => (
