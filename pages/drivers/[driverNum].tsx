@@ -26,7 +26,9 @@ export default function DriverDetail() {
 	if (!driverData) {
 		return (
 			<>
-				<h1>Fetching Driver Data...</h1>
+				<div className="flex justify-center items-center h-screen">
+					<h1 className="font-bold text-lg">Fetching Driver Data...</h1>
+				</div>
 			</>
 		);
 	}
