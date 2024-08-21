@@ -7,6 +7,7 @@ import {
 	CardTitle,
 } from "./ui/card";
 import { Separator } from "./ui/separator";
+import Link from "next/link";
 
 export default function DriverCard(props: DriverCardProps) {
 	/**
@@ -54,47 +55,49 @@ export default function DriverCard(props: DriverCardProps) {
 	return (
 		<>
 			<div className="driver-name min-w-[276px] overflow-hidden">
-				<Card className="min-h-[220px] flex flex-col h-full">
-					<CardHeader className="flex flex-row flex-shrink-0">
-						<div
-							className="w-1 h-14 mr-2"
-							style={{ backgroundColor: `#${props.teamColor}` }}
-						/>
-						<div className="flex flex-col">
-							<CardTitle className="font-light text-lg">
-								{parseFirstName(props.name)}
-							</CardTitle>
-							<CardTitle className="font-semibold">
-								{parseLastName(props.name)}
-							</CardTitle>
+				<Link href={`/drivers/${props.driverNumber}`}>
+					<Card className="min-h-[220px] flex flex-col h-full">
+						<CardHeader className="flex flex-row flex-shrink-0">
+							<div
+								className="w-1 h-14 mr-2"
+								style={{ backgroundColor: `#${props.teamColor}` }}
+							/>
+							<div className="flex flex-col">
+								<CardTitle className="font-light text-lg">
+									{parseFirstName(props.name)}
+								</CardTitle>
+								<CardTitle className="font-semibold">
+									{parseLastName(props.name)}
+								</CardTitle>
+							</div>
+						</CardHeader>
+						<div className="px-5">
+							<Separator />
 						</div>
-					</CardHeader>
-					<div className="px-5">
-						<Separator />
-					</div>
 
-					<CardContent className="relative my-2 flex-grow overflow-hidden">
-						<CardDescription>{props.team}</CardDescription>
-						<div className="absolute top-0 right-4">
-							<Image
-								src={formatDriverURL(props.name.toString())}
-								alt={props.name}
-								width={100}
-								height={100}
-								priority
-							/>
-						</div>
-						<div className="number">
-							<Image
-								className="absolute top-8 left-4 drop-shadow-lg"
-								src={formatDriverNumberURL(props.name.toString())}
-								alt={props.driverNumber.toString()}
-								width={80}
-								height={80}
-							/>
-						</div>
-					</CardContent>
-				</Card>
+						<CardContent className="relative my-2 flex-grow overflow-hidden">
+							<CardDescription>{props.team}</CardDescription>
+							<div className="absolute top-0 right-4">
+								<Image
+									src={formatDriverURL(props.name.toString())}
+									alt={props.name}
+									width={100}
+									height={100}
+									priority
+								/>
+							</div>
+							<div className="number">
+								<Image
+									className="absolute top-8 left-4 drop-shadow-lg"
+									src={formatDriverNumberURL(props.name.toString())}
+									alt={props.driverNumber.toString()}
+									width={80}
+									height={80}
+								/>
+							</div>
+						</CardContent>
+					</Card>
+				</Link>
 			</div>
 		</>
 	);
