@@ -31,7 +31,8 @@ export default function DriverDetail() {
 		const baseURL =
 			"https://media.formula1.com/image/upload/f_auto,c_limit,q_75,w_1024/content/dam/fom-website/manual/Helmets2024/";
 
-		let lastName = driverName.split(" ")[1];
+		let lastName =
+			driverName != "ZHOU Guanyu" ? driverName.split(" ")[1] : "Zhou";
 
 		const URL = `${baseURL}${lastName.toLowerCase()}.png`;
 		return URL;
