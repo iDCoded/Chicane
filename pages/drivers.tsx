@@ -24,7 +24,8 @@ export default function Drivers() {
 		};
 
 		fetchDrivers();
-	});
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 	const driverFullName = (driverNumber: number) => {
 		const firstName = drivers.find(
 			(f) => f.driver_number === driverNumber
