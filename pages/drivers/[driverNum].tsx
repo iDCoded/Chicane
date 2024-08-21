@@ -68,11 +68,14 @@ export default function DriverDetail() {
 						width={240}
 						height={240}
 					/>
-					<div className="flex flex-row justify-between">
-						<h3 className="mt-4 pl-2 font-semibold text-xl">
+					<div className="flex flex-row justify-between items-center">
+						<h3 className="mt-1 pl-4 font-semibold text-2xl text-gray-500">
+							{driverData.driver_number}
+						</h3>
+						<h3 className="mt-2 pl-2 font-semibold text-xl">
 							{driverData.name_acronym}
 						</h3>
-						<div className="py-2">
+						<div className="py-2 mt-2">
 							<Image
 								className="border-[1.5px] rounded-md border-[#808080] mr-2"
 								src={getDriverCountryFlag(driverData.country_code)}
