@@ -82,27 +82,28 @@ export default function DriverDetail() {
 							{driverData.name_acronym}
 						</h3>
 					</div>
-				</div>
-				<div className="helmet mt-16 h-full w-full object-cover">
-					<Image
-						src={formatDriverHelmetURL(driverData.full_name)}
-						alt={driverData.full_name}
-						width={100}
-						height={100}
-					/>
-				</div>
-				<div className="flex flex-row pt-16 ml-2 min-w-[120px]">
-					<div className="flex flex-col">
-						<CardTitle className="font-light text-lg">
-							{/* {parseFirstName(props.name)} */}
-							{driverData.first_name}
-						</CardTitle>
-						<CardTitle className="font-semibold">
-							{/* {parseLastName(props.name)} */}
-							{driverData.last_name}
-						</CardTitle>
+					<div className="flex flex-row pt-4 ml-2 min-w-[120px]">
+						<div className="flex flex-col">
+							<CardTitle className="font-light text-lg">
+								{/* {parseFirstName(props.name)} */}
+								{driverData.first_name}
+							</CardTitle>
+							<CardTitle className="font-semibold">
+								{/* {parseLastName(props.name)} */}
+								{driverData.last_name}
+							</CardTitle>
+						</div>
+					</div>
+					<div className="helmet mt-16 h-full w-full object-cover">
+						<Image
+							src={formatDriverHelmetURL(driverData.full_name)}
+							alt={driverData.full_name}
+							width={180}
+							height={180}
+						/>
 					</div>
 				</div>
+
 				<div className="mx-8 leading-8">
 					<div className="flex">
 						<h3 className="font-bold text-4xl ">Biography</h3>
