@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { CardTitle } from "@/components/ui/card";
 import BackButton from "@/components/BackButton";
 import { countries } from "@/public/countries";
+import { biographies } from "@/public/biography";
 
 /**
  * Dynamic Driver Page
@@ -45,6 +46,10 @@ export default function DriverDetail() {
 		return URL;
 	};
 
+	const getDriverBio = (driverAcronym: string) => {
+		return biographies[driverAcronym];
+	};
+
 	if (!driverData) {
 		return (
 			<>
@@ -61,7 +66,7 @@ export default function DriverDetail() {
 		<>
 			<BackButton />
 			<div className="h-screen flex flex-row">
-				<div className="driver-image flex flex-col p-12">
+				<div className="driver-image flex flex-col p-12 pr-2 min-w-[240px]">
 					<Image
 						className="rounded-md shadow-md"
 						src={`https://media.formula1.com/image/upload/f_auto,c_limit,q_75,w_1320/content/dam/fom-website/drivers/2024Drivers/${driverData.last_name.toLowerCase()}`}
@@ -73,25 +78,12 @@ export default function DriverDetail() {
 						<h3 className="mt-1 pl-4 font-semibold text-2xl text-gray-500">
 							{driverData.driver_number}
 						</h3>
-						<h3 className="mt-2 pl-2 font-semibold text-xl">
+						<h3 className="mt-2 pl-2 px-6 font-semibold text-xl">
 							{driverData.name_acronym}
 						</h3>
-						<div className="py-2 mt-2">
-							<Image
-								className="border-[1.5px] rounded-md border-[#808080] mr-2"
-								src={getDriverCountryFlag(driverData.country_code)}
-								alt={driverData.full_name}
-								width={54}
-								height={31}
-							/>
-						</div>
 					</div>
 				</div>
-				<div
-					className="w-1 h-14 mt-[72px]"
-					style={{ backgroundColor: `#${driverData.team_colour}` }}
-				/>
-				<div className="helmet mt-16">
+				<div className="helmet mt-16 h-full w-full object-cover">
 					<Image
 						src={formatDriverHelmetURL(driverData.full_name)}
 						alt={driverData.full_name}
@@ -99,7 +91,7 @@ export default function DriverDetail() {
 						height={100}
 					/>
 				</div>
-				<div className="flex flex-row pt-16 ml-2">
+				<div className="flex flex-row pt-16 ml-2 min-w-[120px]">
 					<div className="flex flex-col">
 						<CardTitle className="font-light text-lg">
 							{/* {parseFirstName(props.name)} */}
@@ -110,6 +102,23 @@ export default function DriverDetail() {
 							{driverData.last_name}
 						</CardTitle>
 					</div>
+				</div>
+				<div className="mx-8 leading-8">
+					<div className="flex">
+						<h3 className="font-bold text-4xl ">Biography</h3>
+						<div className="ml-8  pt-1">
+							<Image
+								className="border-[1.5px] rounded-md border-[#808080] mr-2"
+								src={getDriverCountryFlag(driverData.country_code)}
+								alt={driverData.full_name}
+								width={54}
+								height={31}
+							/>
+						</div>
+					</div>
+					<p className="mt-6 text-md text-balance">
+						{getDriverBio(driverData.name_acronym)}
+					</p>
 				</div>
 			</div>
 		</>
