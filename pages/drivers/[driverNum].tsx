@@ -65,7 +65,7 @@ export default function DriverDetail() {
 	return (
 		<>
 			<BackButton />
-			<div className="h-screen flex flex-row">
+			<div className="h-80vh flex flex-row">
 				<div className="driver-image flex flex-col p-12 pr-2 min-w-[240px]">
 					<Image
 						className="rounded-md shadow-md"
