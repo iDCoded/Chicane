@@ -39,7 +39,9 @@ export default function Drivers() {
 
 	return (
 		<>
-			<BackButton />
+			<div className="fixed z-20">
+				<BackButton />
+			</div>
 			<div className="flex justify-center content-center">
 				<h1 className="text-4xl mt-6 font-bold">Drivers</h1>
 			</div>
